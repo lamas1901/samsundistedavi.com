@@ -1,0 +1,66 @@
+{% extends '../origin/base.html' %}
+{% load static %}
+{% block title %}
+   {{ page.menu_name }}
+{% endblock %}
+{% load clinic_tags %}
+{% block content %}
+<!--Start Banner-->
+{% if page.show_banner %}
+   <div class="sub-banner">
+         <img 
+            class="banner-img" 
+            style="height: 200px;object-fit: cover;"
+            src="
+               {% if not page.banner %}
+                  {% static 'images/sub-banner.jpg' %}
+               {% else %}
+                  {{page.banner.url}}
+               {% endif %}
+            " 
+            alt="banner">
+      <div class="detail">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="paging">
+                     <h2>{{ page.menu_name }}</h2>
+                     <ul>
+                        <li><a href="/">Ana Sayfa</a></li>
+                        <li><a>{{ page.menu_name }}</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+{% endif %}
+<!--End Banner-->
+<!--Start Content-->
+<div class="content">
+   <div class="news-posts">
+      <div class="container" style="margin-bottom: 1em;">
+         <div class="row">
+            <div class="col-md-{% if page.show_services_sidebar %}8{% else %}12{% endif %}">
+               <div class="news-detail">
+                  {% if page.show_image %}
+                     <img style="height: 300px; object-fit: contain;" src="{{ page.image.url }}" alt="">
+                  {% endif %}
+                  <div class="detail">
+                     <h3>{{ page.title|markdown }}</h3>
+                     <p>
+                        {{ page.content|markdown }}
+                     </p>
+                  </div>
+               </div>
+            </div>
+            {% if page.show_services_sidebar %}
+               {% show_services_sidebar %}
+            {% endif %}
+         </div>
+      </div>
+   </div>
+</div>
+<!--End Content-->
+{% endblock %}

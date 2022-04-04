@@ -1,0 +1,75 @@
+{% extends '../origin/base.html' %}
+{% load static %}
+{% load clinic_tags %}
+{% block title %}
+   {{ service.title }}
+{% endblock %}
+{% block content %}
+<!--Start Banner-->
+<div class="sub-banner">
+   <img class="banner-img" src="{% static 'images/sub-banner.jpg' %}" alt="">
+   <div class="detail">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="paging">
+                  <h2>{{ service.title }}</h2>
+                  <ul>
+                     <li><a href="index-2.html">Ana Sayfa</a></li>
+                     <li><a href="#.">Tedaviler</a></li>
+                     <li><a>{{ service.title }}</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--End Banner-->
+<!--Start Content-->
+<div class="content">
+   <div class="news-posts">
+      <div class="container" style="margin-bottom: 1em;">
+         <div class="row">
+            <div class="col-md-8">
+               <div class="news-detail">
+                  <img style="height: 300px; object-fit: contain;" src="{{ service.image.url }}" alt="">
+                  <div class="detail">
+                     <h1 style="font-size: 3em !important">{{ service.title }}</h1>
+                     <p>
+                        {{ service.content|markdown }}
+                     </p>
+                  </div>
+               </div>
+               <div class="share-post">
+                  <span>Tedavimizi paylaş!</span>
+                  <div class="social-icons">
+                     <a href="#." class="fb"><i class="icon-euro"></i></a>
+                     <a href="#." class="tw"><i class="icon-yen"></i></a>
+                     <a href="#." class="gp"><i class="icon-google-plus"></i></a>
+                     <a href="#." class="vimeo"><i class="icon-vimeo4"></i></a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="recent-posts">
+                  <h6 class="bar-title">Tedaviler</h6>
+                  {% if other_services %}
+                     {% for service in other_services %}
+                        <div class="post-sec">
+                           <a href="blog-detail.html"><img src="{{ service.image.url }}" alt=""></a>
+                           <a href="blog-detail.html" class="title">{{ service.title }}</a>
+                        </div>
+                     {% endfor %}
+                  {% else %}
+                     <p style="margin-top:1em">Şuanda mevcut tedavi yok :(</p>
+                  {% endif %}
+               </div>
+               <div class="clear"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--End Content-->
+{% endblock %}

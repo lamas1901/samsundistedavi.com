@@ -1,0 +1,24 @@
+{% load clinic_tags %}
+<div class="container">
+   <div id="page">
+      <header class="header">
+         <a href="#menu"></a>
+      </header>
+      <nav id="menu">
+         <ul>
+            <li class="select">
+               <a href="/">Ana Sayfa</a>
+            </li>
+            <li>
+               <a href="#.">Tedaviler</a>
+               <ul>
+                  {% for service in services %}
+                     <li><a href="about-us.html">{{ service.title }}</a></li>
+                  {% endfor %}
+               </ul>
+            </li>
+            {% show_header_pages page %}
+         </ul>
+      </nav>
+   </div>
+</div>

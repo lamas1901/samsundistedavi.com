@@ -160,7 +160,5 @@ cython_debug/
 #.idea/
 
 # my edits
-tmp/
-media/
 *.swp
 *~

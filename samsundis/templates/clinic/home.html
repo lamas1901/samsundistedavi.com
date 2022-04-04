@@ -1,0 +1,230 @@
+{% extends '../origin/base.html' %}
+{% load static %}
+{% block title %}
+   Ana Sayfa
+{% endblock %}
+{% load clinic_tags %}
+{% block content %}
+   <div class="">
+      <div class="swiper">
+         <div class="swiper-wrapper">
+            {% for slide in slides %}
+               <div class="swiper-slide">
+                  <img 
+                     class="swiper__image"
+                     src="{{slide.image.url}}" 
+                     alt="slider image"
+                     style="
+                     ">
+                  <div 
+                     class="swiper__caption {% if slide.caption_left %}swiper__caption--left{% endif %}">
+                     <div class="swiper__title">
+                        {{ slide.title|markdown }}
+                     </div>
+                     {{ slide.subtitle|markdown }}
+                     {% if slide.show_button %}
+                        <a href="{{ slide.button_link }}" class="btn btn-primary btn-lg swiper__button">{{ slide.button_text }}</a>
+                     {% endif %}
+                  </div>
+               </div>
+            {% endfor %}
+         </div>
+         <div class="swiper-button-prev"></div>
+         <div class="swiper-button-next"></div>
+      </div>
+   </div>
+<!--Start Make Appointment-->
+<div class="make-appointment">
+   <div class="container">
+      <ul id="accordion" class="accordion">
+         <li>
+            <div class="link"><i class="fa fa-database"></i><span class="appointment-title">Randevu alınız</span> <i class="icon-chevron-down"></i> </div>
+            <form method="POST" action="/" class="bgcolor-3">
+               {% csrf_token %}
+               {% if appointment_form.errors %}
+                  <p class="error" id="error">
+                  </p>
+               {% endif %}
+               <div 
+                  style="max-width: 300px; margin: 0 auto;">
+                  {% if appointment_form.errors %}
+                     <p class="error" id="error">
+                        {{ appointment_form.name.errors.message }}   
+                        {{ appointment_form.phone.errors.message }}   
+                        {{ appointment_form.mail.errors.message }}   
+                        {{ appointment_form.message.errors.message }}   
+                     </p>
+                  {% endif %}
+                  <div style="margin-bottom:1em">
+                     <label style="color:white">Adınız Soyadınız</label>
+                     {{ appointment_form.name }}
+                  </div>
+                  <div style="margin-bottom:1em">
+                     <label style="color:white">Telefon Numarası</label>
+                     {{ appointment_form.phone }}
+                  </div>
+                  <div style="margin-bottom:1em">
+                     <label style="color:white">E-posta</label>
+                     {{ appointment_form.mail }}
+                  </div>
+                  <div style="margin-bottom:1em">
+                     <label style="color:white">Mesaj</label>
+                     {{ appointment_form.message }}
+                  </div>
+                  <input name="submit" type="submit" value="Gönder">
+               </div>
+            </form>
+         </li>
+      </ul>
+   </div>
+</div>
+<!--End Make Appointment-->
+<!--Start Services-->
+<div class="services-one">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="service-sec">
+               <div class="icon">
+                  <i class="icon-mortar-pestle"></i>
+               </div>
+               <div class="detail">
+                  <h5>Rehabilitasyon Merkezi</h5>
+                  <p>Diş muayenesi diş, diş eti ve ağız sağlığının detaylı bir kontrolden geçirilmesi amacıyla diş hekimleri tarafından gerçekleştirilen muayene işlemidir.</p>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="service-sec">
+               <div class="icon">
+                  <i class="icon-doctor"></i>
+               </div>
+               <div class="detail">
+                  <h5>Nitelikli Doktorlar</h5>
+                  <p>Belirgin bir rahatsızlığınız olmasa bile ortalama 6 ayda bir diş hekiminize kontrole gidin. Diş hekiminizin yardım ve yönlendirmeleri ile kendinize bir bakım programı çıkarın.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--End Services-->
+<!--Start Welcome-->
+<div class="welcome dark-back">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="main-title">
+               <h2>Samsun diş kliniğine <span>hoş geldiniz</span></h2>
+            </div>
+         </div>
+      </div>
+      <div id="tabbed-nav">
+         <div>
+            <div>
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="welcome-serv-img">
+                        <img src="{% static 'images/services-img2.jpg' %}" alt="">
+                     </div>
+                  </div>
+                  <div class="col-md-6">
+                     <div class="detail">
+                        <h4>Hakkımızda</h4>
+                        <p>
+                           Biz, yeni nesil diş hekimliğini temsil ediyoruz. Türkiye’nin ve dünyanın en başarılı ağız ve diş sağlığı klinik markası olmak için çıktık yola. Hem sektörde hem de hastalarımızın hayatında anlamlı dönüşümlere imza atmak, öncelikli hedefimiz.
+                           <br><br>
+                           Biz, tedavilerimize çocukların, gençlerin, yetişkinlerin, yaşlıların hayata öz güvenle bakmalarını sağlıyor, dünyalarını değiştirebilmelerine imkan yaratıyoruz. Çünkü, ağızda yapılacak 1mm’lik ufak bir değişikliğin nasıl kocaman bir gülümsemeye dönüşebileceğini, bir insan güldüğünde içindeki gerçek potansiyelin ortaya çıkarak hayatını pozitif anlamda nasıl değiştirebileceğini biliyoruz.
+                        </p>
+                        <a href="hakkimizda">Daha fazla...</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--End Welcome-->
+<!--Start Doctor Quote-->
+<div class="dr-quote">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <span class="quote">"Hayat çok kısa, dişlerin varken gülümse."</span>
+            <br>
+            <span class="name">- La Edri</span>
+         </div>
+      </div>
+   </div>
+</div>
+<!--End Doctor Quote-->
+<!--Start Latest News-->
+<div class="latest-news dark-back">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="main-title">
+               <h2>Tedavilerimizi <span>görün</span></h2>
+               <p>Daha İyi Sağlık Yoluyla Yaşam Kalitenizi İyileştirme.</p>
+            </div>
+         </div>
+      </div>
+      <div id="latest-news">
+         <div class="container">
+            <div class="row">
+               <div class="span12">
+                  <div id="owl-demo" class="owl-carousel">
+                     {% for service in services %}
+                        <div class="post item">
+                           <img style="height: 15em; object-fit: cover;" class="lazyOwl" src="{{service.image.url}}" alt="">
+                           <div class="detail">
+                              <a href="{{service.get_absolute_url}}">
+                                 <h3>
+                                    <b>
+                                       {{service.title}}
+                                    </b>
+                                 </h3>
+                              </a>
+                           </div>
+                        </div>
+                     {% endfor %}
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--End Latest News-->
+{% endblock %}
+{% block styles %}
+      <link
+     rel="stylesheet"
+     href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+   />
+   <style>
+      .swiper {
+        width: 100%;
+        height: 80vh;
+      }
+      .service-item__text h1-6{
+         display: none !important;
+      }
+   </style>
+   <link rel="stylesheet" href="{% static 'css/page-home.css' %}">
+{% endblock %}
+{% block scripts %}
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+   const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: true,
+      navigation: {
+         nextEl: '.swiper-button-next',
+         prevEl: '.swiper-button-prev',
+      },
+   });
+</script>
+
+{% endblock %}

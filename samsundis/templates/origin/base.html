@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Samsun Diş kliniği - {% block title %}{% endblock %}</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+      <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+      <!--main file-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+      <link href="{% static 'css/medical-guide.css' %}" rel="stylesheet" type="text/css">
+      <!--Medical Guide Icons-->
+      <link href="{% static 'fonts/medical-guide-icons.css' %}" rel="stylesheet" type="text/css">
+      <!-- Default Color-->
+      <link href="{% static 'css/default-color.css' %}" rel="stylesheet" id="color"  type="text/css">
+      <!--bootstrap-->
+      <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+      <!--Dropmenu-->
+      <link href="{% static 'css/dropmenu.css' %}" rel="stylesheet" type="text/css">
+      <!--Sticky Header-->
+      <link href="{% static 'css/sticky-header.css' %}" rel="stylesheet" type="text/css">
+      <!--revolution-->
+      <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'css/settings.css' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'css/extralayers.css' %}" rel="stylesheet" type="text/css">
+      <!--Accordion-->
+      <link href="{% static 'css/accordion.css' %}" rel="stylesheet" type="text/css">
+      <!--tabs-->
+      <link href="{% static 'css/tabs.css' %}" rel="stylesheet" type="text/css">
+      <!--Owl Carousel-->
+      <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css">
+      <!-- Mobile Menu -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.mmenu.all.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}" />
+      <!--PreLoader-->
+      <link href="{% static 'css/loader.css' %}" rel="stylesheet" type="text/css">
+      <!--switcher-->
+      <link href="{% static 'css/switcher.css' %}" rel="stylesheet" type="text/css">
+      {% block styles %}
+      {% endblock %}
+   </head>
+   <body>
+      <div id="wrap">
+         <!--Start PreLoader-->
+         <div id="preloader">
+            <div id="status">&nbsp;</div>
+            <div class="loader">
+               <h1>Loading...</h1>
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
+         </div>
+         <!--End PreLoader-->
+         {% include './header.html' %}
+         <!-- Mobile Menu Start -->
+         {% include './mobile-menu.html' %}
+         <!-- Mobile Menu End -->
+         <!--Start Content-->
+         <div class="content">
+            {% block content %}
+            {% endblock %}
+         </div>
+         <!--End Content-->
+         {% include './footer.html' %}
+      </div>
+      <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+      <!-- SMOOTH SCROLL -->	
+      <script type="text/javascript" src="{% static 'js/scroll-desktop.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/scroll-desktop-smooth.js' %}"></script>
+      <!-- Date Picker and input hover -->
+      <script type="text/javascript" src="{% static 'js/classie.js' %}"></script> 
+      <script type="text/javascript" src="{% static 'js/jquery-ui-1.10.3.custom.js' %}"></script>
+      <!-- Welcome Tabs -->	
+      <script type="text/javascript" src="{% static 'js/tabs.js' %}"></script>
+      <!-- All Carousel -->
+      <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
+      <!-- Mobile Menu -->
+      <script type="text/javascript" src="{% static 'js/jquery.mmenu.min.all.js' %}"></script>
+      <!-- All Scripts -->
+      <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+      {% block scripts %}
+      {% endblock %}
+   </body>
+</html>

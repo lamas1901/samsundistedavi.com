@@ -1,0 +1,16 @@
+<div class="col-md-4">
+   <div class="recent-posts">
+      <h6 class="bar-title">Tedaviler</h6>
+      {% if services %}
+         {% for service in services %}
+            <div class="post-sec">
+               <a href="blog-detail.html"><img src="{{ service.image.url }}" alt=""></a>
+               <a href="blog-detail.html" class="title">{{ service.title }}</a>
+            </div>
+         {% endfor %}
+      {% else %}
+         <p style="margin-top:1em">Şuanda mevcut tedavi yok :(</p>
+      {% endif %}
+   </div>
+   <div class="clear"></div>
+</div>

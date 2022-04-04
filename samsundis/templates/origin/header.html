@@ -1,0 +1,55 @@
+{% load static %}
+{% load clinic_tags %}
+<!--Start Header-->
+<div id="header-2">
+   <div class="top-bar">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-5">
+               <span>
+                  <a style="color:white" href="{{ 'ADDRESS_LINK'|get_const }}">
+                     <i class="fas fa-map-marker-alt"></i> Atakum Yeni mah. 
+                  </a>
+               </span>
+            </div>
+            <div class="col-md-7">
+               <div class="get-touch">
+                  <ul>
+                     <li><a style="color:white" href="tel:{{ 'TEL'|get_const }}"><i class="icon-phone4"></i> {{ 'PHONE'|get_const }}</a></li>
+                     <li><a style="color:white" href="mailto:{{ 'MAIL'|get_const }}"><i class="icon-mail"></i> {{ 'MAIL'|get_const }}</a></li>
+                  </ul>
+                  {% show_media %}
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <header class="header header2">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-3 d-flex align-items-center">
+               <a href="/" style="margin-top: 0!important" class="logo">
+                  <img style="height: 70px;width: auto; margin-top: 6px;" src="{% static 'images/logo.png' %}" alt="">
+               </a>
+            </div>
+            <div class="col-md-9">
+               <nav class="menu-2">
+                  <ul class="nav wtf-menu">
+                     <li class="{% if not page  and not service %}item-select{% endif %}">
+                        <a href="/">Ana Sayfa</a>
+                     </li>
+                     <li class="parent">
+                        <a href="#.">Tedaviler</a>
+                        <ul class="submenu">
+                           {% show_header_services %}
+                        </ul>
+                     </li>
+                     {% show_header_pages page %}
+                  </ul>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </header>
+</div>
+<!--End Header-->

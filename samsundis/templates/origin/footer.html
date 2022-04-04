@@ -1,0 +1,65 @@
+{% load static %}
+{% load clinic_tags %}
+<!--Start Footer-->
+<footer class="footer" id="footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="emergency">
+               <i class="icon-phone5"></i>
+               <span class="text">Bize bu numaradan ulaşınız</span>
+               <span class="number">{{ 'PHONE'|get_const }}</span>
+               <img src="{% static 'images/emergency-divider.png' %}" alt="">
+            </div>
+         </div>
+      </div>
+      <div class="main-footer">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="useful-links">
+                  <div class="title">
+                     <h5>Samsun Diş kliniği</h5>
+                  </div>
+                  <div class="detail">
+                     <ul>
+                        <li><a style="white-space: nowrap;" href="/">Ana sayfa</a></li>
+                        {% show_footer_pages %}
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="get-touch">
+                  <div class="title">
+                     <h5>Bizimle iletişime geç</h5>
+                  </div>
+                  <div class="detail">
+                     <div class="get-touch">
+                        <ul>
+                           <li>
+                              <a href="{{ 'ADDRESS_LINK'|get_const }}">
+                                 <i class="icon-location"></i> 
+                                 <span style="color:white">{{ 'ADDRESS'|get_const }}</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="tel:{{ 'PHONE'|get_const }}">
+                                 <i class="icon-phone4"></i> <span style="color:white">{{ 'PHONE'|get_const }}</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a href="mailto:{{ 'MAIL'|get_const }}">
+                                 <i class="icon-dollar"></i><span style="color:white">{{ 'MAIL'|get_const }}</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+<a href="#0" class="cd-top"></a>
+<!--End Footer-->

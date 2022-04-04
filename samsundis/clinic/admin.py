@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Doctor,Service,Slide
+from .models import Doctor,Service,Slide,CustomPage,Media
 
 # Register your models here.
 
@@ -18,3 +18,13 @@ class SlideAdmin(admin.ModelAdmin):
     list_display = ('title','subtitle')
     order = ('title','subtitle')
 
+@admin.register(CustomPage)
+class CustomPageAdmin(admin.ModelAdmin):
+    list_display = ('menu_name',)
+    order = ('menu_name',)
+    prepopulated_fields = {'slug':('menu_name',)}
+
+@admin.register(Media)
+class MediaAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    order = ('name',)
