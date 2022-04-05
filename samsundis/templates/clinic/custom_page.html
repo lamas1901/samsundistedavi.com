@@ -39,7 +39,7 @@
 <!--End Banner-->
 <!--Start Content-->
 <div class="content">
-   <div class="news-posts">
+   <div {% if not page.show_banner and not page.show_services_sidebar %}style="padding-top: 0"{% endif %} class="news-posts">
       <div class="container" style="margin-bottom: 1em;">
          <div class="row">
             <div class="col-md-{% if page.show_services_sidebar %}8{% else %}12{% endif %}">
