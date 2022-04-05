@@ -10,11 +10,9 @@
                <a href="/">Ana Sayfa</a>
             </li>
             <li>
-               <a href="#.">Tedaviler</a>
+               <a>Tedaviler</a>
                <ul>
-                  {% for service in services %}
-                     <li><a href="about-us.html">{{ service.title }}</a></li>
-                  {% endfor %}
+                  {% show_header_services %}
                </ul>
             </li>
             {% show_header_pages page %}

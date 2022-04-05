@@ -7,13 +7,9 @@ $("#menu").mmenu({
 "offCanvas": {
 "position": "right"
 },
-"footer": {
-"add": true,
-"title": "Copyrights 2015 Medical Guide. all rights reserved."
-},
 
 "header": {
-"title": "Medical Guide",
+"title": "Samsun Diş kliniği",
 "add": true,
 "update": true
 },
