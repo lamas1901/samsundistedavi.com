@@ -50,23 +50,8 @@
                      <a href="#." class="vimeo"><i class="icon-vimeo4"></i></a>
                   </div>
                </div>
-            </div>
-            <div class="col-md-4">
-               <div class="recent-posts">
-                  <h6 class="bar-title" style="margin-bottom: 0.5em;">Tedaviler</h6>
-                  {% if other_services %}
-                     {% for service in other_services %}
-                        <div style="display: flex;margin-bottom: 0.5em; border: 1px solid rgba(0,0,0,0.1)">
-                           <a style="display: block;" href="{{ service.get_absolute_url }}"><img style="height: 75px; max-width: 75px; object-fit: cover;" src="{{ service.image.url }}" alt="service image"></a>
-                           <a style="padding: 0.5em;display: block; color: black !important; width: calc(100% - 75px)" href="{{ service.get_absolute_url }}" class="title">{{ service.title }}</a>
-                        </div>
-                     {% endfor %}
-                  {% else %}
-                     <p style="margin-top:1em">Şuanda mevcut tedavi yok :(</p>
-                  {% endif %}
-               </div>
-               <div class="clear"></div>
-            </div>
+            </div>      
+            {% show_services_sidebar other_services %}
          </div>
       </div>
    </div>

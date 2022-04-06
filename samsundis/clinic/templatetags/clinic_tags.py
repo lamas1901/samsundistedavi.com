@@ -38,8 +38,9 @@ def show_footer_pages():
 	}
 
 @register.inclusion_tag('clinic/component/services_sidebar.html')
-def show_services_sidebar():
-	services = Service.objects.all()
+def show_services_sidebar(services=None):
+	if not services:
+		services = Service.objects.all()
 	return {
 		'services':services,
 	}
