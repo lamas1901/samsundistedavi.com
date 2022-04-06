@@ -16,16 +16,18 @@
                      alt="slider image"
                      style="
                      ">
-                  <div 
-                     class="swiper__caption {% if slide.caption_left %}swiper__caption--left{% endif %}">
-                     <div class="swiper__title">
-                        {{ slide.title|markdown }}
+                  {% if slide.show_caption %}
+                     <div 
+                        class="swiper__caption {% if slide.caption_left %}swiper__caption--left{% endif %}">
+                        <div class="swiper__title">
+                           {{ slide.title|markdown }}
+                        </div>
+                        {{ slide.subtitle|markdown }}
+                        {% if slide.show_button %}
+                           <a href="{{ slide.button_link }}" class="btn btn-primary btn-lg swiper__button">{{ slide.button_text }}</a>
+                        {% endif %}
                      </div>
-                     {{ slide.subtitle|markdown }}
-                     {% if slide.show_button %}
-                        <a href="{{ slide.button_link }}" class="btn btn-primary btn-lg swiper__button">{{ slide.button_text }}</a>
-                     {% endif %}
-                  </div>
+                  {% endif %}
                </div>
             {% endfor %}
          </div>

@@ -30,6 +30,7 @@ class Slide(models.Model):
     title = models.CharField(max_length=75)
     subtitle = models.TextField()
     show_button = models.BooleanField()
+    show_caption = models.BooleanField(default=True)
     caption_left = models.BooleanField(default=False)
     button_text = models.CharField(max_length=50,null=True,blank=True)
     button_link = models.CharField(max_length=50,null=True,blank=True)
