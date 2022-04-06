@@ -1,0 +1,29 @@
+.add-whatsapp-contact{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	margin: 0.5em;
+	height: 72px;
+	width: 72px;
+	color:  #fff;
+	background: #25D366;
+	border-radius:  50%;
+	display: flex;
+	justify-content: center;
+	font-size: 3em;
+	align-items: center;
+	z-index: 99999;
+	animation: contact-button 0.5s infinite;
+}
+
+@keyframes contact-button{
+	from{
+		transform: translate(0);
+	}
+	50%{
+		transform: translate(0,-10px);
+	}
+	to{
+		transform: translate(0);
+	}
+}
