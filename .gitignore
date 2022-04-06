@@ -163,5 +163,3 @@ cython_debug/
 # my edits
 *.swp
 *~
-tmp/
-media/
