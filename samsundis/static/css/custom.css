@@ -27,3 +27,19 @@
 		transform: translate(0);
 	}
 }
+
+div#google_translate_element div.goog-te-gadget-simple {
+    font-size: 12px;
+    box-sizing: border-box;
+    height: min-content;
+    height: 25px;
+    margin: 5px;
+}
+
+.service-card{
+	transition: .2s;
+	padding: 1em;
+}
+.service-card:hover{
+	background: rgba(0,0,0,0.1);
+}

@@ -160,7 +160,7 @@
 </div>
 <!--End Doctor Quote-->
 <!--Start Latest News-->
-<div class="latest-news dark-back">
+<div class="services-one">
    <div class="container">
       <div class="row">
          <div class="col-md-12">
@@ -170,29 +170,21 @@
             </div>
          </div>
       </div>
-      <div id="latest-news">
-         <div class="container">
-            <div class="row">
-               <div class="span12">
-                  <div id="owl-demo" class="owl-carousel">
-                     {% for service in services %}
-                        <div class="post item">
-                           <img style="height: 15em; object-fit: cover;" class="lazyOwl" src="{{service.image.url}}" alt="">
-                           <div class="detail">
-                              <a href="{{service.get_absolute_url}}">
-                                 <h3>
-                                    <b>
-                                       {{service.title}}
-                                    </b>
-                                 </h3>
-                              </a>
-                           </div>
-                        </div>
-                     {% endfor %}
+      <div class="row">
+         {% for service in services %}
+            {% if service.icon %}
+               <a href="{{ service.get_absolute_url }}" class="col-md-4 service-card">
+                  <div class="service-sec" style="margin-bottom: 0;color: black !important;display: flex; align-items: center; gap: 1em;">
+                     <div class="icon" style="height: auto; width: auto;">
+                        <img style="height:60px; width: 60px; object-fit: contain; margin:10px" src="{{service.icon.url}}" alt="">
+                     </div>
+                     <div class="detail">
+                        <h5>{{service.title}}</h5>
+                     </div>
                   </div>
-               </div>
-            </div>
-         </div>
+               </a>
+            {% endif %}
+         {% endfor %}
       </div>
    </div>
 </div>

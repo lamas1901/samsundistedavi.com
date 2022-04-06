@@ -16,6 +16,7 @@ class Service(models.Model):
     slug = models.SlugField(max_length=250,unique=True,null=True,blank=True)
     content = models.TextField()
     image = models.ImageField(upload_to='service')
+    icon = models.ImageField(upload_to='service_icons',blank=True,null=True)
 
     def get_absolute_url(self):
         return reverse('clinic:service_detail',args=[
