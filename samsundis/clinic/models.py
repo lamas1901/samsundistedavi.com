@@ -13,12 +13,13 @@ class Doctor(models.Model):
 
 class Service(models.Model):
     title = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=250,unique=True,null=True,blank=True)
     content = models.TextField()
     image = models.ImageField(upload_to='service')
 
     def get_absolute_url(self):
         return reverse('clinic:service_detail',args=[
-            self.id
+            self.slug
         ])
 
     def __str__(self):

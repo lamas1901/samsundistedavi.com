@@ -12,6 +12,7 @@ class DoctorAdmin(admin.ModelAdmin):
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('title',)
     ordering = ('title',)
+    prepopulated_fields = {'slug':('title',)}
 
 @admin.register(Slide)
 class SlideAdmin(admin.ModelAdmin):

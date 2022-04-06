@@ -40,9 +40,9 @@ def about_us(request):
 def contact_us(request):
 	return render(request,'clinic/contact_us.html')
 
-def service_detail(request,id):
-	service = Service.objects.get(id=id)
-	other_services = Service.objects.all().exclude(id=id)
+def service_detail(request,slug):
+	service = Service.objects.get(slug=slug)
+	other_services = Service.objects.all().exclude(slug=slug)
 	print(other_services)
 	return render(request,'clinic/service_details.html',{
 		'service':service,
