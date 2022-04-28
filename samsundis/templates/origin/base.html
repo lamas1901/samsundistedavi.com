@@ -40,6 +40,14 @@
       <!--switcher-->
       <link href="{% static 'css/switcher.css' %}" rel="stylesheet" type="text/css">
       <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-227024722-1"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'UA-227024722-1');
+      </script>
       {% block styles %}
       {% endblock %}
    </head>
