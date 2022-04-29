@@ -1,110 +1,138 @@
 {% load static %}
 {% load clinic_tags %}
 <!DOCTYPE html>
-<html>
-   <head>
-      <title>Samsun Diş kliniği - {% block title %}{% endblock %}</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-      <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
-      <!--main file-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-      <link href="{% static 'css/medical-guide.css' %}" rel="stylesheet" type="text/css">
-      <!--Medical Guide Icons-->
-      <link href="{% static 'fonts/medical-guide-icons.css' %}" rel="stylesheet" type="text/css">
-      <!-- Default Color-->
-      <link href="{% static 'css/default-color.css' %}" rel="stylesheet" id="color"  type="text/css">
-      <!--bootstrap-->
-      <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css">
-      <!--Dropmenu-->
-      <link href="{% static 'css/dropmenu.css' %}" rel="stylesheet" type="text/css">
-      <!--Sticky Header-->
-      <link href="{% static 'css/sticky-header.css' %}" rel="stylesheet" type="text/css">
-      <!--revolution-->
-      <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
-      <link href="{% static 'css/settings.css' %}" rel="stylesheet" type="text/css">
-      <link href="{% static 'css/extralayers.css' %}" rel="stylesheet" type="text/css">
-      <!--Accordion-->
-      <link href="{% static 'css/accordion.css' %}" rel="stylesheet" type="text/css">
-      <!--tabs-->
-      <link href="{% static 'css/tabs.css' %}" rel="stylesheet" type="text/css">
-      <!--Owl Carousel-->
-      <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css">
-      <!-- Mobile Menu -->
-      <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.mmenu.all.css' %}" />
-      <link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}" />
-      <!--PreLoader-->
-      <link href="{% static 'css/loader.css' %}" rel="stylesheet" type="text/css">
-      <!--switcher-->
-      <link href="{% static 'css/switcher.css' %}" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-222256764-2"></script>
-      <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js',new Date());
-         gtag('config','UA-222256764-2');
-      </script>
-      {% block styles %}
-      {% endblock %}
-   </head>
-   <body>
-      <div id="wrap">
-         <!--Start PreLoader-->
-         <div id="preloader">
+<html lang='tr'>
+
+<head>
+    <title>Samsun Diş kliniği - {% block title %}{% endblock %}</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <!--main file-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="{% static 'css/medical-guide.css' %}" rel="stylesheet" type="text/css">
+    <!--Medical Guide Icons-->
+    <link href="{% static 'fonts/medical-guide-icons.css' %}" rel="stylesheet" type="text/css">
+    <!-- Default Color-->
+    <link href="{% static 'css/default-color.css' %}" rel="stylesheet" id="color" type="text/css">
+    <!--bootstrap-->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+    <!--Dropmenu-->
+    <link href="{% static 'css/dropmenu.css' %}" rel="stylesheet" type="text/css">
+    <!--Sticky Header-->
+    <link href="{% static 'css/sticky-header.css' %}" rel="stylesheet" type="text/css">
+    <!--revolution-->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/settings.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/extralayers.css' %}" rel="stylesheet" type="text/css">
+    <!--Accordion-->
+    <link href="{% static 'css/accordion.css' %}" rel="stylesheet" type="text/css">
+    <!--tabs-->
+    <link href="{% static 'css/tabs.css' %}" rel="stylesheet" type="text/css">
+    <!--Owl Carousel-->
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css">
+    <!-- Mobile Menu -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jquery.mmenu.all.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}" />
+    <!--PreLoader-->
+    <link href="{% static 'css/loader.css' %}" rel="stylesheet" type="text/css">
+    <!--switcher-->
+    <link href="{% static 'css/switcher.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-222256764-2"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-222256764-2');
+    </script>
+    {% block styles %}
+    {% endblock %}
+</head>
+
+<body>
+    <div id="wrap">
+        <!--Start PreLoader-->
+        <div id="preloader">
             <div id="status">&nbsp;</div>
             <div class="loader">
-               <h1>Loading...</h1>
-               <span></span>
-               <span></span>
-               <span></span>
+                <h1>Yükleniyor...</h1>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-         </div>
-         <!--End PreLoader-->
-         {% include './header.html' %}
-         <!-- Mobile Menu Start -->
-         {% include './mobile-menu.html' %}
-         <!-- Mobile Menu End -->
-         <!--Start Content-->
-         <div class="content">
+        </div>
+        <!--End PreLoader-->
+        {% include './header.html' %}
+        <!-- Mobile Menu Start -->
+        {% include './mobile-menu.html' %}
+        <!-- Mobile Menu End -->
+        <!--Start Content-->
+        <div class="content">
             {% block content %}
             {% endblock %}
-         </div>
-         <!--End Content-->
-         {% include './footer.html' %}
-      </div>
-      <a href="https://wa.me/{{ 'PHONE_WA'|get_const }}" class="add-whatsapp-contact">
-         <i class="fa-brands fa-whatsapp"></i>
-      </a>
-      <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
-      <!-- SMOOTH SCROLL -->	
-      <script type="text/javascript" src="{% static 'js/scroll-desktop.js' %}"></script>
-      <script type="text/javascript" src="{% static 'js/scroll-desktop-smooth.js' %}"></script>
-      <!-- Date Picker and input hover -->
-      <script type="text/javascript" src="{% static 'js/classie.js' %}"></script> 
-      <script type="text/javascript" src="{% static 'js/jquery-ui-1.10.3.custom.js' %}"></script>
-      <!-- Welcome Tabs -->	
-      <script type="text/javascript" src="{% static 'js/tabs.js' %}"></script>
-      <!-- All Carousel -->
-      <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
-      <!-- Mobile Menu -->
-      <script type="text/javascript" src="{% static 'js/jquery.mmenu.min.all.js' %}"></script>
-      <!-- All Scripts -->
+        </div>
+        <!--End Content-->
+        {% include './footer.html' %}
+    </div>
+    <a href="https://wa.me/{{ 'PHONE_WA'|get_const }}" class="add-whatsapp-contact">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <!-- SMOOTH SCROLL -->
+    <script type="text/javascript" src="{% static 'js/scroll-desktop.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/scroll-desktop-smooth.js' %}"></script>
+    <!-- Date Picker and input hover -->
+    <script type="text/javascript" src="{% static 'js/classie.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-ui-1.10.3.custom.js' %}"></script>
+    <!-- Welcome Tabs -->
+    <script type="text/javascript" src="{% static 'js/tabs.js' %}"></script>
+    <!-- All Carousel -->
+    <script type="text/javascript" src="{% static 'js/owl.carousel.js' %}"></script>
+    <!-- Mobile Menu -->
+    <script type="text/javascript" src="{% static 'js/jquery.mmenu.min.all.js' %}"></script>
+    <!-- All Scripts -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+                pageLanguage: 'tr',
+                layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT
+            },
+            'google_translate_element'
+        );
+    }
 
-      <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+    function triggerHtmlEvent(element, eventName) {
+        var event;
+        if (document.createEvent) {
+            event = document.createEvent('HTMLEvents');
+            event.initEvent(eventName, true, true);
+            element.dispatchEvent(event);
+        } else {
+            event = document.createEventObject();
+            event.eventType = eventName;
+            element.fireEvent('on' + event.eventType, event);
+        }
+    }
 
-      <script type="text/javascript">// <![CDATA[
-         function googleTranslateElementInit() {
-         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-         }
-         // ]]>   
-      </script>
+    $('.lang-select').click(function() {
+        var theLang = jQuery(this).attr('data-lang');
+        jQuery('.goog-te-combo').val(theLang);
+        console.log(1)
+        //alert(jQuery(this).attr('href'));
+        window.location = jQuery(this).attr('href');
+        location.reload();
 
-      <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
-      {% block scripts %}
-      {% endblock %}
-   </body>
+    });
+    </script>
+    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+    {% block scripts %}
+    {% endblock %}
+</body>
+
 </html>

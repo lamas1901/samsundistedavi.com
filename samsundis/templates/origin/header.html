@@ -11,10 +11,9 @@
                      <i class="fas fa-map-marker-alt"></i> Atakum Yeni mah. 
                   </a>
                </span>
-               <div id="google_translate_element" style="overflow: hidden; display: inline-block; margin: 5px; width: min-content;"></div>
             </div>
             <div class="col-md-7">
-               <div class="get-touch">
+               <div class="get-touch" >
                   <ul>
                      <li><a style="color:white" href="tel:{{ 'PHONE'|get_const }}"><i class="icon-phone4"></i> {{ 'PHONE'|get_const }}</a></li>
                      <li><a style="color:white" href="mailto:{{ 'MAIL'|get_const }}"><i class="icon-mail"></i> {{ 'MAIL'|get_const }}</a></li>
@@ -27,13 +26,13 @@
    </div>
    <header class="header header2">
       <div class="container">
-         <div class="row">
+         <div class="row" style="display:flex; align-items: center;">
             <div class="col-md-3 d-flex align-items-center">
                <a href="/" style="margin-top: 0!important" class="logo">
                   <img style="height: 70px;width: auto; margin-top: 6px;" src="{% static 'images/logo.png' %}" alt="">
                </a>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9" style="display:flex ; align-items:center ">
                <nav class="menu-2">
                   <ul class="nav wtf-menu">
                      <li class="{% if not page  and not service %}item-select{% endif %}">
@@ -48,6 +47,27 @@
                      {% show_header_pages page %}
                   </ul>
                </nav>
+               <div class="btn-lang" style="height: 2rem; line-height: 1.2em;">
+                  <i class="fas fa-globe"></i>
+                  Language
+                  <div class="btn-lang__options">
+                     <a href="#googtrans(en|tr)" class="lang-tr lang-select btn-lang__option" data-lang="tr">
+                        <span class="notranslate">Türkçe</span>
+                     </a>
+                     <a href="#googtrans(en|en)" class="lang-en lang-select btn-lang__option" data-lang="en">
+                        <span class="notranslate">English</span>
+                     </a>
+                     <a href="#googtrans(en|de)" class="lang-de lang-select btn-lang__option" data-lang="de">
+                        <span class="notranslate">Deutsch</span>
+                     </a>
+                     <a href="#googtrans(en|ar)" class="lang-ar lang-select btn-lang__option" data-lang="ar">
+                        <span class="notranslate">عربي</span>
+                     </a>
+                     <a href="#googtrans(en|ru)" class="lang-ru lang-select btn-lang__option" data-lang="ru">
+                        <span class="notranslate">Русский</span>
+                     </a>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
