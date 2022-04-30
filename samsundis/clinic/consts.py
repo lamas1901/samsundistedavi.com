@@ -1,5 +1,6 @@
-PHONE = '+90 (362) 606 0455'
-PHONE_WA = '+903626060455'
+PHONE = '+903626307707'
+PHONE_REPR = '+90 (362) 630 7707'
+PHONE_WA = '905516307707'
 MAIL = 'samsundisklinigi@hotmail.com'
 ADDRESS = 'Yenimahalle, 3474 Sk Demir Apt D:No:1/ A Daire:11, 55100'
 ADDRESS_LINK = 'https://www.google.com/maps/dir//Samsun+Di%C5%9F+Klini%C4%9Fi/@41.3513237,36.2366081,18.5z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40887901e6d76d09:0x756afb3e298f1e09!2m2!1d36.2376205!2d41.3513167'

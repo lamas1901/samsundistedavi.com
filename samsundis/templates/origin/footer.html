@@ -8,7 +8,7 @@
             <div class="emergency">
                <i class="icon-phone5"></i>
                <span class="text">Bize bu numaradan ulaşınız</span>
-               <span class="number">{{ 'PHONE'|get_const }}</span>
+               <span class="number">{{ 'PHONE_REPR'|get_const }}</span>
                <img src="{% static 'images/emergency-divider.png' %}" alt="">
             </div>
          </div>
@@ -44,7 +44,7 @@
                            </li>
                            <li>
                               <a href="tel:{{ 'PHONE'|get_const }}">
-                                 <i class="icon-phone4"></i> <span style="color:white">{{ 'PHONE'|get_const }}</span>
+                                 <i class="icon-phone4"></i> <span style="color:white">{{ 'PHONE_REPR'|get_const }}</span>
                               </a>
                            </li>
                            <li>
