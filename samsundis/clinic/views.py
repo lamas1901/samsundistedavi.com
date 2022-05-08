@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import AppointmentForm
-from .models import Doctor,Slide,Service,CustomPage
+from .models import Doctor,Slide,Service,CustomPage,Special
 from . import consts
 
 def home(request):
@@ -50,3 +50,7 @@ def service_detail(request,slug):
 
 def specials(request):
 	return render(request,'clinic/specials.html')
+
+def special_single(request,slug):
+	special = Special.objects.get(slug=slug)
+	return render(request,'clinic/special-single.html',{'special':special})

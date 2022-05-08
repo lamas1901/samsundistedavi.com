@@ -18,6 +18,7 @@ class ServiceAdmin(admin.ModelAdmin):
 class SpecialAdmin(admin.ModelAdmin):
     list_display = ('title',)
     ordering = ('title',)
+    prepopulated_fields = {'slug':('title',)}
 
 @admin.register(Slide)
 class SlideAdmin(admin.ModelAdmin):

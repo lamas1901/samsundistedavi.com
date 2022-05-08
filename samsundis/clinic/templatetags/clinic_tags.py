@@ -57,3 +57,11 @@ def show_media():
 @register.simple_tag
 def get_specials():
 	return Special.objects.all()
+
+# striptags
+
+@register.simple_tag
+def strip_tags(string):
+	symbols = ['`','*','_','{','}','[]','()','#','+','-','.','!']
+	for symbol in symbols:
+		string = string.replace(sybmol,'')

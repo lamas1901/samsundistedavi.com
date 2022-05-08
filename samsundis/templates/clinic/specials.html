@@ -15,7 +15,7 @@
                <div class="paging">
                   <h2>Size Özel</h2>
                   <ul>
-                     <li><a href="index-2.html">Ana Sayfa</a></li>
+                     <li><a href="{% url 'clinic:home' %}">Ana Sayfa</a></li>
                      <li>Size Özel</li>
                   </ul>
                </div>
@@ -27,34 +27,28 @@
 <!--End Banner-->
 <!--Start Content-->
 <div class="content">
-   <div class="news-posts">
-      <div class="container" style="margin-bottom: 1em;">
-         {% get_specials as specials %}
+   <div class="news-masonary">
+      <div class="container">
          <div class="row">
-            <div class="col-md-8">
-               {% for special in specials %}
-                  <div class="news-detail">
-                     <video preload="none" autoplay loop muted style="height: 300px; width: 100%; object-fit: cover;">
-                        <source src="{% if special.video %}{{ special.video.url }}{% endif %}" type="video/mp4">
-                     </video>
-                     <div class="detail">
-                        <h1 style="font-size: 3em !important">
-                           {{special.title}}
-                        </h1>
-                        <p>
-                           {{special.content|markdown }}
-                        </p>
+            {% get_specials as specials %}
+            {% for special in specials %}
+               <div class="col-md-4">
+                  <div class="border">
+                     <div class="news-sec">
+                        <img src="{{special.image.url}}" alt="">
+                        <div class="detail">
+                           <h5>{{special.title}}</h5>
+                           <p>{{special.content|markdown|striptags|truncatechars:50}}</p>
+                           <a href="{{special.get_absolute_url}}">Devamını Oku</a>
+                        </div>
                      </div>
                   </div>
-                  <br>
-                  <br>
-                  <br>
-               {% endfor %}
-            </div>      
-            {% show_services_sidebar other_services %}
+               </div>   
+            {% endfor %}
          </div>
       </div>
    </div>
+
 </div>
 <!--End Content-->
 {% endblock %}

@@ -29,13 +29,23 @@ class Service(models.Model):
 
 class Special(models.Model):
     title = models.CharField(max_length=50)
+    slug = models.SlugField(max_length=250,null=True,blank=True,unique=True)
     content = models.TextField()
+    image = models.ImageField(upload_to='special_images',blank=True,null=True)
     video = models.FileField(
         upload_to='special_videos',
         null=True,
         blank=True,
         validators=[FileExtensionValidator(allowed_extensions=['mp4'])]
     )
+
+    def get_absolute_url(self):
+        return reverse('clinic:special_single',args=[
+            self.slug
+        ])
+
+    def __str__(self):
+        return f'Special : {self.title}'
 
 class Slide(models.Model):
     title = models.CharField(max_length=75)

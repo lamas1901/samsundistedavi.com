@@ -32,11 +32,14 @@
                   <img style="height: 70px;width: auto; margin-top: 6px;" src="{% static 'images/logo.png' %}" alt="">
                </a>
             </div>
-            <div class="col-md-9" style="display:flex ; align-items:center ">
+            <div class="col-md-9" style="display:flex ; align-items:center; justify-content: flex-end;">
                <nav class="menu-2">
                   <ul class="nav wtf-menu">
                      <li class="{% if not page  and not service %}item-select{% endif %}">
-                        <a href="/">Ana Sayfa</a>
+                        <a href="{% url 'clinic:home' %}">Ana Sayfa</a>
+                     </li>
+                     <li>
+                        <a href="{% url 'clinic:specials' %}">Size Özel</a>
                      </li>
                      <li class="parent">
                         <a href="#.">Tedaviler</a>

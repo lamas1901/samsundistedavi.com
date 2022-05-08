@@ -1,5 +1,10 @@
-{% for page in header_pages %}
-   <li class="{% if current_page.id == page.id and page %}item-select{% endif %}">
-      <a href="{{ page.get_absolute_url }}">{{ page.menu_name }}</a>
-   </li>
-{% endfor %}
+<li class="parent">
+   <a href="#.">Diğer Sayfalar</a>
+   <ul class="submenu">
+   {% for page in header_pages %}
+      <li>
+         <a href="{{ page.get_absolute_url }}">{{ page.menu_name }}</a>
+      </li>
+   {% endfor %}
+   </ul>
+</li>

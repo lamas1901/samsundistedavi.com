@@ -2,7 +2,7 @@
 {% load static %}
 {% load clinic_tags %}
 {% block title %}
-   {{ service.title }}
+   {{ special.title }}
 {% endblock %}
 {% block content %}
 <!--Start Banner-->
@@ -13,11 +13,11 @@
          <div class="row">
             <div class="col-md-12">
                <div class="paging">
-                  <h2>{{ service.title }}</h2>
+                  <h2>Size Özel</h2>
                   <ul>
                      <li><a href="{% url 'clinic:home' %}">Ana Sayfa</a></li>
-                     <li><a href="#.">Tedaviler</a></li>
-                     <li><a>{{ service.title }}</a></li>
+                     <li><a href="{% url 'clinic:specials' %}">Size Özel</a></li>
+                     <li>{{special.title}}</li>
                   </ul>
                </div>
             </div>
@@ -33,23 +33,21 @@
          <div class="row">
             <div class="col-md-8">
                <div class="news-detail">
-                  <img style="height: 300px; object-fit: contain;" src="{{ service.image.url }}" alt="">
+                  <video preload="none" autoplay loop muted style="height: 300px; width: 100%; object-fit: cover;">
+                     <source src="{% if special.video %}{{ special.video.url }}{% endif %}" type="video/mp4">
+                  </video>
                   <div class="detail">
-                     <h1 style="font-size: 3em !important">{{ service.title }}</h1>
+                     <h1 style="font-size: 3em !important">
+                        {{special.title}}
+                     </h1>
                      <p>
-                        {{ service.content|markdown }}
+                        {{special.content|markdown }}
                      </p>
                   </div>
                </div>
-               <div class="share-post">
-                  <span>Tedavimizi paylaş!</span>
-                  <div class="social-icons">
-                     <a href="#." class="fb"><i class="icon-euro"></i></a>
-                     <a href="#." class="tw"><i class="icon-yen"></i></a>
-                     <a href="#." class="gp"><i class="icon-google-plus"></i></a>
-                     <a href="#." class="vimeo"><i class="icon-vimeo4"></i></a>
-                  </div>
-               </div>
+               <br>
+               <br>
+               <br>
             </div>      
             {% show_services_sidebar other_services %}
          </div>
