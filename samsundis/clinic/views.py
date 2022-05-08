@@ -47,3 +47,6 @@ def service_detail(request,slug):
 		'service':service,
 		'other_services':other_services
 	})
+
+def specials(request):
+	return render(request,'clinic/specials.html')

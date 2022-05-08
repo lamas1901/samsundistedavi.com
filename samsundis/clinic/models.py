@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.core.validators import FileExtensionValidator
 
 # Create your models here.
 
@@ -25,6 +26,16 @@ class Service(models.Model):
 
     def __str__(self):
         return f'Service : {self.title}'
+
+class Special(models.Model):
+    title = models.CharField(max_length=50)
+    content = models.TextField()
+    video = models.FileField(
+        upload_to='special_videos',
+        null=True,
+        blank=True,
+        validators=[FileExtensionValidator(allowed_extensions=['mp4'])]
+    )
 
 class Slide(models.Model):
     title = models.CharField(max_length=75)

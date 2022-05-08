@@ -3,7 +3,7 @@ from django.utils.safestring import mark_safe
 import markdown
 
 from .. import consts
-from ..models import CustomPage, Service, Media
+from ..models import CustomPage, Service, Media, Special
 
 register = template.Library()
 
@@ -51,3 +51,9 @@ def show_media():
 	return {
 		'media':media
 	}
+
+# specials
+
+@register.simple_tag
+def get_specials():
+	return Special.objects.all()

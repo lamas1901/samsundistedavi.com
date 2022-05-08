@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Doctor,Service,Slide,CustomPage,Media
+from .models import Doctor,Service,Slide,CustomPage,Media,Special
 
 # Register your models here.
 
@@ -13,6 +13,11 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ('title',)
     ordering = ('title',)
     prepopulated_fields = {'slug':('title',)}
+
+@admin.register(Special)
+class SpecialAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    ordering = ('title',)
 
 @admin.register(Slide)
 class SlideAdmin(admin.ModelAdmin):
