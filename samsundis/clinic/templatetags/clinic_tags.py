@@ -18,6 +18,7 @@ def get_const(const_name):
 @register.inclusion_tag('clinic/component/header_pages.html')
 def show_header_pages(page):
 	pages = CustomPage.objects.all().filter(show_in_header=True)
+	print(pages)
 	return {
 		'header_pages':pages,
 		'current_page':page
