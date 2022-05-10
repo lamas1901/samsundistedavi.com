@@ -33,9 +33,11 @@
          <div class="row">
             <div class="col-md-8">
                <div class="news-detail">
-                  <video preload="none" autoplay loop muted style="height: 300px; width: 100%; object-fit: cover;">
-                     <source src="{% if special.video %}{{ special.video.url }}{% endif %}" type="video/mp4">
-                  </video>
+                  {% if special.video %}
+                     <video preload="none" autoplay loop muted style="height: 300px; width: 100%; object-fit: cover;">
+                        <source src="{% if special.video %}{{ special.video.url }}{% endif %}" type="video/mp4">
+                     </video>
+                  {% endif %}
                   <div class="detail">
                      <h1 style="font-size: 3em !important">
                         {{special.title}}

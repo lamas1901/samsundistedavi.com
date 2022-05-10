@@ -35,7 +35,9 @@
                <div class="col-md-4">
                   <div class="border">
                      <div class="news-sec">
-                        <img src="{{special.image.url}}" alt="">
+                        {% if special.image %}
+                           <img src="{{special.image.url}}" alt="">
+                        {% endif %}
                         <div class="detail">
                            <h5>{{special.title}}</h5>
                            <p>{{special.content|markdown|striptags|truncatechars:50}}</p>
