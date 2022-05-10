@@ -15,28 +15,20 @@ def markdown_format(text):
 def get_const(const_name):
 	return consts.__dict__.get(const_name,None)
 
-@register.inclusion_tag('clinic/component/header_pages.html')
-def show_header_pages(page):
+@register.simple_tag
+def get_header_pages():
 	pages = CustomPage.objects.all().filter(show_in_header=True)
-	print(pages)
-	return {
-		'header_pages':pages,
-		'current_page':page
-	}
+	return pages
 
-@register.inclusion_tag('clinic/component/header_services.html')
-def show_header_services():
+@register.simple_tag
+def get_header_services():
 	services = Service.objects.all()
-	return {
-		'services':services
-	}
+	return services
 
-@register.inclusion_tag('clinic/component/footer_pages.html')
-def show_footer_pages():
+@register.simple_tag
+def get_footer_pages():
 	pages = CustomPage.objects.all().filter(show_in_footer=True)
-	return {
-		'footer_pages': pages,
-	}
+	return pages
 
 @register.inclusion_tag('clinic/component/services_sidebar.html')
 def show_services_sidebar(services=None):
@@ -46,18 +38,10 @@ def show_services_sidebar(services=None):
 		'services':services,
 	}
 
-@register.inclusion_tag('clinic/component/media.html')
-def show_media():
-	media = Media.objects.all()
-	return {
-		'media':media
-	}
-
-# specials
-
 @register.simple_tag
-def get_specials():
-	return Special.objects.all()
+def get_media():
+	media = Media.objects.all()
+	return media
 
 # striptags
 

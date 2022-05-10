@@ -1,0 +1,51 @@
+{% extends '../origin/base.html' %}
+{% load static %}
+{% load clinic_tags %}
+{% block title %}
+   Mutlu insanlar
+{% endblock %}
+{% block content %}
+<!--Start Content-->
+<div class="content">
+    <div class="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="main-title">
+                        <h2>Mutlu İnsanlar</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="main-gallery">
+                    <div class="col-md-6">
+                        <a class="gallery-sec fancybox photo-icon" href="{% static 'images/gallery/img1.jpg' %}" data-fancybox-group="gallery">
+                            <div class="image-hover img-layer-slide-left-right">
+                                <img src="{% static 'images/gallery/img1.jpg' %}" alt="">
+                                <div class="layer"> <i class="icon-image2"></i> </div>
+                            </div>
+                            <div class="detail">
+                                <h6>Operation Theater</h6>
+                                <span>Cras porttitor mauris pulvinar Quisque in nulla</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="gallery-sec fancybox-media video-icon" href="http://vimeo.com/36031564">
+                            <div class="image-hover img-layer-slide-left-right">
+                                <img src="{% static 'images/gallery/img2.jpg' %}" alt="">
+                                <div class="layer"> <i class="icon-video2"></i> </div>
+                            </div>
+                            <div class="detail">
+                                <h6>Kids Treatment</h6>
+                                <span>Cras porttitor mauris pulvinar Quisque in nulla</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End Content-->
+{% endblock %}

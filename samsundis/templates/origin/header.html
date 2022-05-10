@@ -18,7 +18,12 @@
                      <li><a style="color:white" href="tel:{{ 'PHONE'|get_const }}"><i class="icon-phone4"></i> {{ 'PHONE_REPR'|get_const }}</a></li>
                      <li><a style="color:white" href="mailto:{{ 'MAIL'|get_const }}"><i class="icon-mail"></i> {{ 'MAIL'|get_const }}</a></li>
                   </ul>
-                  {% show_media %}
+                  <ul  class="social-icons">
+                     {% get_media as media %}
+                     {% for media in media %}
+                        <li><a style="background: {{media.hex_icon_color}}" href="{{media.link}}" class="fb">{{media.icon_markdown|markdown}}</a></li>
+                     {% endfor %}
+                  </ul>
                </div>
             </div>
          </div>
@@ -44,10 +49,25 @@
                      <li class="parent">
                         <a href="#.">Tedaviler</a>
                         <ul class="submenu">
-                           {% show_header_services %}
+                           {% get_header_services as header_services %}
+                           {% for service in header_services %}
+                              <li>
+                                 <a href="{{service.get_absolute_url}}">{{ service.title }}</a>
+                              </li>
+                           {% endfor %}
                         </ul>
                      </li>
-                     {% show_header_pages page %}
+                     <li class="parent">
+                        <a href="#.">Diğer Sayfalar</a>
+                        <ul class="submenu">
+                        {% get_header_pages as header_pages %}
+                        {% for page in header_pages %}
+                           <li>
+                              <a href="{{ page.get_absolute_url }}">{{ page.menu_name }}</a>
+                           </li>
+                        {% endfor %}
+                        </ul>
+                     </li>
                   </ul>
                </nav>
                <div class="btn-lang" style="height: 2rem; line-height: 1.2em; margin-left: 1em">

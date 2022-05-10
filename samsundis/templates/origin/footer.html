@@ -23,7 +23,10 @@
                   <div class="detail">
                      <ul>
                         <li><a style="white-space: nowrap;" href="/">Ana sayfa</a></li>
-                        {% show_footer_pages %}
+                        {% get_footer_pages as footer_pages %}
+                        {% for page in footer_pages %}
+                           <li><a style="white-space: nowrap;" href="{{page.get_absolute_url}}">{{page.menu_name}}</a></li>
+                        {% endfor %}
                      </ul>
                   </div>
                </div>

@@ -2,7 +2,7 @@
 {% load static %}
 {% load clinic_tags %}
 {% block title %}
-   {{ service.title }}
+   Size Özel
 {% endblock %}
 {% block content %}
 <!--Start Banner-->
@@ -30,7 +30,6 @@
    <div class="news-masonary">
       <div class="container">
          <div class="row">
-            {% get_specials as specials %}
             {% for special in specials %}
                <div class="col-md-4">
                   <div class="border">
@@ -50,7 +49,6 @@
          </div>
       </div>
    </div>
-
 </div>
 <!--End Content-->
 {% endblock %}

@@ -30,7 +30,7 @@ def home(request):
 
 def custom_page(request,slug):
 	page = CustomPage.objects.get(slug=slug)
-	return render(request,'clinic/custom_page.html',{
+	return render(request,'clinic/custom-page.html',{
 		'page':page	
 	})
 
@@ -43,14 +43,18 @@ def contact_us(request):
 def service_detail(request,slug):
 	service = Service.objects.get(slug=slug)
 	other_services = Service.objects.all().exclude(slug=slug)
-	return render(request,'clinic/service_details.html',{
+	return render(request,'clinic/service-details.html',{
 		'service':service,
 		'other_services':other_services
 	})
 
 def specials(request):
-	return render(request,'clinic/specials.html')
+	specials = Special.objects.all()
+	return render(request,'clinic/specials.html',{'specials':specials})
 
 def special_single(request,slug):
 	special = Special.objects.get(slug=slug)
 	return render(request,'clinic/special-single.html',{'special':special})
+
+def mutlu_insanlar(request):
+	return render(request,'clinic/mutlu-insanlar.html')

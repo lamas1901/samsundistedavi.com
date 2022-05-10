@@ -1,6 +1,0 @@
-{% load clinic_tags %}
-<ul  class="social-icons">
-	{% for media in media %}
-		<li><a style="background: {{media.hex_icon_color}}" href="{{media.link}}" class="fb">{{media.icon_markdown|markdown}}</a></li>
-	{% endfor %}
-</ul>
