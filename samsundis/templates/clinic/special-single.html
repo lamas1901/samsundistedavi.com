@@ -22,6 +22,10 @@
                </div>
             </div>
          </div>
+         <div class="text-center d-flex">
+            <a href="https://wa.me/{{ 'PHONE_WA'|get_const }}" class="btn btn-info btn-lg" style="margin-top:1em">Randevu Al</a>
+            <a href="tel:{{ 'PHONE'|get_const }}" class="btn btn-info btn-lg" style="margin-top:1em">Arama Yap</a>
+         </div>
       </div>
    </div>
 </div>
@@ -43,6 +47,10 @@
                      <p>
                         {{special.content|markdown }}
                      </p>
+                  </div>
+                  <div class="text-center d-flex" style="margin-top:2em">
+                     <a href="https://wa.me/{{ 'PHONE_WA'|get_const }}" class="btn btn-info btn-lg" style="margin-top:1em">Randevu Al</a>
+                     <a href="tel:{{ 'PHONE'|get_const }}" class="btn btn-info btn-lg" style="margin-top:1em">Arama Yap</a>
                   </div>
                </div>
                <br>

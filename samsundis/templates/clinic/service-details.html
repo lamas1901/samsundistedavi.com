@@ -22,6 +22,10 @@
                </div>
             </div>
          </div>
+         <div class="text-center d-flex">
+            <a href="https://wa.me/{{ 'PHONE_WA'|get_const }}" class="btn btn-info btn-lg" style="margin-top:1em">Randevu Al</a>
+            <a href="tel:{{ 'PHONE'|get_const }}" class="btn btn-info btn-lg" style="margin-top:1em">Arama Yap</a>
+         </div>
       </div>
    </div>
 </div>
@@ -41,14 +45,9 @@
                      </p>
                   </div>
                </div>
-               <div class="share-post">
-                  <span>Tedavimizi paylaş!</span>
-                  <div class="social-icons">
-                     <a href="#." class="fb"><i class="icon-euro"></i></a>
-                     <a href="#." class="tw"><i class="icon-yen"></i></a>
-                     <a href="#." class="gp"><i class="icon-google-plus"></i></a>
-                     <a href="#." class="vimeo"><i class="icon-vimeo4"></i></a>
-                  </div>
+               <div class="text-center d-flex" style="margin-top:2em,margin-bottom: 2em">
+                  <a href="https://wa.me/{{ 'PHONE_WA'|get_const }}" class="btn btn-info btn-lg" style="margin-top:1em">Randevu Al</a>
+                  <a href="tel:{{ 'PHONE'|get_const }}" class="btn btn-info btn-lg" style="margin-top:1em">Arama Yap</a>
                </div>
             </div>      
             {% show_services_sidebar other_services %}
