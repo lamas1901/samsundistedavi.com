@@ -60,12 +60,15 @@
                      <li class="parent">
                         <a href="#.">Diğer Sayfalar</a>
                         <ul class="submenu">
-                        {% get_header_pages as header_pages %}
-                        {% for page in header_pages %}
+                           {% get_header_pages as header_pages %}
+                           {% for page in header_pages %}
+                              <li>
+                                 <a href="{{ page.get_absolute_url }}">{{ page.menu_name }}</a>
+                              </li>
+                           {% endfor %}
                            <li>
-                              <a href="{{ page.get_absolute_url }}">{{ page.menu_name }}</a>
+                              <a href="{% url 'clinic:mutlu_insanlar' %}">Mutlu İnsanlar</a>
                            </li>
-                        {% endfor %}
                         </ul>
                      </li>
                   </ul>

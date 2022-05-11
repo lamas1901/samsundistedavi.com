@@ -1,31 +1,33 @@
-.add-whatsapp-contact{
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	margin: 0.5em;
-	height: 72px;
-	width: 72px;
-	color:  #fff;
-	background: #25D366;
-	border-radius:  50%;
-	display: flex;
-	justify-content: center;
-	font-size: 3em;
-	align-items: center;
-	z-index: 99999;
-	animation: contact-button 0.5s infinite;
+.add-whatsapp-contact {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0.5em;
+    height: 72px;
+    width: 72px;
+    color: #fff;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    align-items: center;
+    z-index: 99999;
+    animation: contact-button 0.5s infinite;
 }
 
-@keyframes contact-button{
-	from{
-		transform: translate(0);
-	}
-	50%{
-		transform: translate(0,-10px);
-	}
-	to{
-		transform: translate(0);
-	}
+@keyframes contact-button {
+    from {
+        transform: translate(0);
+    }
+
+    50% {
+        transform: translate(0, -10px);
+    }
+
+    to {
+        transform: translate(0);
+    }
 }
 
 div#google_translate_element div.goog-te-gadget-simple {
@@ -36,61 +38,72 @@ div#google_translate_element div.goog-te-gadget-simple {
     margin: 5px;
 }
 
-.service-card{
-	transition: .2s;
-	padding: 1em;
+.service-card {
+    transition: .2s;
+    padding: 1em;
 }
-.service-card:hover{
-	background: rgba(0,0,0,0.1);
+
+.service-card:hover {
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .goog-te-banner-frame.skiptranslate {
-        display: none !important;
-    } 
-    body {
-        top: 0px !important; 
-    }
-    .btn-lang{
-        all: initial;
-        box-sizing: border-box;
-        font-family: Arial;
-        display: block;
-        background: #fff;
-        position: relative;
-        border: 1px solid black;
-        width: fit-content;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        min-width: 100px;
-    }
-    .btn-lang:hover .btn-lang__options{
-        display: block;
-    }
-    .btn-lang__options{
-        border-radius: 0.5rem;
-        background: #fff;
-        display: none;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        transform: translateY(100%);
-        border: 1px solid black;
-        width: 100%;
-        overflow: hidden;
-    }
-    .btn-lang__option{
-        display: block;
-        color: black;
-        width: 100%;
-        padding: 0.5rem;
-        overflow: hidden;
-        text-decoration: none!important;
-        white-space: nowrap; 
-        text-overflow: ellipsis; 
-        transition: .2s;
-    }
-    .btn-lang__option:hover{
-        background: black;
-        color: white;
-    }
+    display: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+.btn-lang {
+    all: initial;
+    box-sizing: border-box;
+    font-family: Arial;
+    display: block;
+    background: #fff;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.1);
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    min-width: 100px;
+    transition: .1s;
+}
+
+.btn-lang:hover{
+    background: rgba(0,0,0,0.1);
+}
+
+.btn-lang:hover .btn-lang__options {
+    display: block;
+}
+
+.btn-lang__options {
+    border-radius: 0.5rem;
+    background: #fff;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 100%;
+    overflow: hidden;
+}
+
+.btn-lang__option {
+    display: block;
+    color: black;
+    width: 100%;
+    padding: 0.5rem;
+    overflow: hidden;
+    text-decoration: none !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: .1s;
+}
+
+.btn-lang__option:hover {
+    background: rgba(0,0,0,0.1);
+}
